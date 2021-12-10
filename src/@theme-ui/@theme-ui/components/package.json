@@ -1,0 +1,31 @@
+{
+  "name": "@theme-ui/components",
+  "version": "0.12.1",
+  "main": "dist/theme-ui-components.cjs.js",
+  "module": "dist/theme-ui-components.esm.js",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "scripts": {},
+  "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "@styled-system/color": "^5.1.2",
+    "@styled-system/should-forward-prop": "^5.1.2",
+    "@styled-system/space": "^5.1.2",
+    "@theme-ui/css": "0.12.1",
+    "@types/styled-system": "^5.1.13"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^17"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Brent Jackson <jxnblk@gmail.com>",
+  "license": "MIT",
+  "repository": "system-ui/theme-ui",
+  "devDependencies": {
+    "react": "^17.0.1"
+  },
+  "gitHead": "42233ccdc14a1d904860fce30c5bf77794a382ec"
+}

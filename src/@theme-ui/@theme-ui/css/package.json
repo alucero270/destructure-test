@@ -1,0 +1,26 @@
+{
+  "name": "@theme-ui/css",
+  "version": "0.12.1",
+  "source": "src/index.ts",
+  "main": "dist/theme-ui-css.cjs.js",
+  "module": "dist/theme-ui-css.esm.js",
+  "sideEffects": false,
+  "scripts": {},
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "repository": "system-ui/theme-ui",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "csstype": "^3.0.10"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts",
+      "utils.ts"
+    ]
+  },
+  "gitHead": "42233ccdc14a1d904860fce30c5bf77794a382ec"
+}
