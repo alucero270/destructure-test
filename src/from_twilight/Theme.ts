@@ -1,7 +1,6 @@
-import {} from "@emotion/serialize";
-import { CSSInterpolation /* Interpolation */ } from "@emotion/serialize";
-//import Link from "../themeComponents/Link";
-//import { GatsbyLinkProps } from "gatsby-link";
+import { CSSProperties } from "@emotion/serialize";
+import { CSSInterpolation } from "@emotion/serialize";
+
 export type Colors =
   | "primary"
   | "secondary"
@@ -14,22 +13,117 @@ export type Colors =
   | "link_active"
   | "heading"
   | "grey"
-  | "placeholder";
-
-
-
+  | "placeholder"
+  | "color"
+  | "borderTopColor"
+  | "borderBottomColor"
+  | "borderLeftColor"
+  | "borderRightColor"
+  | "outlineColor"
+  | "fill"
+  | "stroke"
+  | "backgroundColor"
+  | "borderColor"
+  | "caretColor"
+  | "columnRuleColor";
 
 //export { Link } from "../themeComponents/Link";
 
-export { Flex } from "../themeComponents/Flex";
+export type Aliases =
+  | "bg"
+  | "m"
+  | "mt"
+  | "mr"
+  | "mb"
+  | "ml"
+  | "mx"
+  | "my"
+  | "p"
+  | "pt"
+  | "pr"
+  | "pb"
+  | "pl"
+  | "px"
+  | "py";
+export type Space =
+  | "margin"
+  | "marginTop"
+  | "marginRight"
+  | "marginBottom"
+  | "marginLeft"
+  | "marginX"
+  | "marginY"
+  | "padding"
+  | "paddingTop"
+  | "paddingRight"
+  | "paddingBottom"
+  | "paddingLeft"
+  | "paddingX"
+  | "paddingY"
+  | "top"
+  | "right"
+  | "bottom"
+  | "left"
+  | "gridGap"
+  | "gridColumnGap"
+  | "gridRowGap"
+  | "gap"
+  | "columnGap"
+  | "rowGap";
 
-export { Box } from "../themeComponents/Box";
+export type Sizes =
+  | "width"
+  | "minWidth"
+  | "maxWidth"
+  | "height"
+  | "minHeight"
+  | "maxHeight"
+  | "flexBasis"
+  | "Box"
+  | "navbarHeight"
+  | "size";
 
-export type Fonts = "body" | "heading";
+export type Multiples =
+  | "marginX"
+  | "marginY"
+  | "paddingX"
+  | "paddingY"
+  | "size";
 
-export type Sizes = "Box" | "navbarHeight";
+export type Borders =
+  | "border"
+  | "borderTop"
+  | "borderRight"
+  | "borderBottom"
+  | "borderLeft"
+  | "borderWidth"
+  | "borderStyle"
+  | "borderRadius"
+  | "borderTopRightRadius"
+  | "borderTopLeftRadius"
+  | "borderBottomRightRadius"
+  | "borderBottomLeftRadius"
+  | "borderTopWidth"
+  | "borderTopStyle"
+  | "borderBottomWidth"
+  | "borderBottomStyle"
+  | "borderLeftWidth"
+  | "borderLeftStyle"
+  | "borderRightWidth"
+  | "borderRightStyle";
+
+export type Fonts =
+  | "body"
+  | "heading"
+  | "fontFamily"
+  | "fontSize"
+  | "fontWeight"
+  | "lineHeight"
+  | "letterSpacing";
 
 export type Padding = "default" | "dense";
+
+export type Shadows = "boxShadow" | "textShadow";
 
 export type StyledElements = "a";
 
@@ -44,15 +138,6 @@ export type TextVariants =
   | "subheading"
   | "metric";
 
-//export type Interpolation<Props> = InterpolationPrimitive | ArrayInterpolation<Props> | FunctionInterpolation<Props>
-
-/* 
-//adds interface for GatsbyLink 
-interface CustomGatsbyLinkProps
-  extends Omit<GatsbyLinkProps<Record<string, unknown>>, "ref"> {
-  active?: boolean;
-} */
-
 interface Variants {
   text: Record<TextVariants, CSSInterpolation>;
   forms: Record<FormVariants, CSSInterpolation>;
@@ -60,11 +145,17 @@ interface Variants {
 }
 
 interface Theme extends Variants {
-  colors: Record<Colors, string>;
+  aliases: Record<Aliases, string>;
+  colors: Record<Colors, string | undefined>;
+  shadows: Record<Shadows, number | string | undefined>;
+  borders: Record<Borders, undefined | string>;
   fonts: Record<Fonts, string>;
   sizes: Record<Sizes, string | number>;
   padding: Record<Padding, string | number>;
+  space: Record<Space, string | number>;
   styles: Record<StyledElements, CSSInterpolation>;
+  multiples: Record<Multiples, string[]>;
 }
+
 
 export default Theme;

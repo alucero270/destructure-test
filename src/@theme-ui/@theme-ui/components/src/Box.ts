@@ -10,12 +10,12 @@ const boxSystemProps = [...space.propNames, ...color.propNames]
  * @internal
  * @type {(prop: string) => boolean}
  */
-export const __isBoxStyledSystemProp = (prop) => boxSystemProps.includes(prop)
+export const __isBoxStyledSystemProp = (prop: any): boolean => boxSystemProps.includes(prop)
 
 const shouldForwardProp = createShouldForwardProp(boxSystemProps)
 
-const sx = (props) => css(props.sx)(props.theme)
-const base = (props) => css(props.__css)(props.theme)
+const sx = (props: { sx: any; theme: any }) => css(props.sx)(props.theme)
+const base = (props: { __css: any; theme: any }) => css(props.__css)(props.theme)
 const variant = ({ theme, variant, __themeKey = 'variants' }) =>
   css(get(theme, __themeKey + '.' + variant, get(theme, variant)))
 

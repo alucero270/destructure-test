@@ -1,5 +1,80 @@
-import Theme, { Colors, Fonts } from "./Theme";
-const colors: Record<Colors, string> = {
+import Theme, {
+  Aliases,
+  Borders,
+  Colors,
+  Fonts,
+  Multiples,
+  Shadows,
+  Sizes,
+  Space,
+} from "./Theme";
+
+const aliases: Record<Aliases, string> = {
+  bg: "backgroundColor",
+  m: "margin",
+  mt: "marginTop",
+  mr: "marginRight",
+  mb: "marginBottom",
+  ml: "marginLeft",
+  mx: "marginX",
+  my: "marginY",
+  p: "padding",
+  pt: "paddingTop",
+  pr: "paddingRight",
+  pb: "paddingBottom",
+  pl: "paddingLeft",
+  px: "paddingX",
+  py: "paddingY",
+};
+
+const space: Record<Space, string | number> = {
+  margin: "space",
+  marginTop: "space",
+  marginRight: "space",
+  marginBottom: "space",
+  marginLeft: "space",
+  marginX: "space",
+  marginY: "space",
+  padding: "space",
+  paddingTop: "space",
+  paddingRight: "space",
+  paddingBottom: "space",
+  paddingLeft: "space",
+  paddingX: "space",
+  paddingY: "space",
+  top: "space",
+  right: "space",
+  bottom: "space",
+  left: "space",
+  gridGap: "space",
+  gridColumnGap: "space",
+  gridRowGap: "space",
+  gap: "space",
+  columnGap: "space",
+  rowGap: "space",
+};
+const sizes: Record<Sizes, number | string> = {
+  width: "sizes",
+  minWidth: "sizes",
+  maxWidth: "sizes",
+  height: "sizes",
+  minHeight: "sizes",
+  maxHeight: "sizes",
+  flexBasis: "sizes",
+  Box: 1080,
+  navbarHeight: 50,
+  size: "sizes",
+};
+
+const multiples: Record<Multiples, string[]> = {
+  marginX: ["marginLeft", "marginRight"],
+  marginY: ["marginTop", "marginBottom"],
+  paddingX: ["paddingLeft", "paddingRight"],
+  paddingY: ["paddingTop", "paddingBottom"],
+  size: ["width", "height"],
+};
+
+const colors: Record<Colors, string | undefined> = {
   primary: "#0051FF",
   secondary: "#00A3FF",
   accent: "#FF5C00",
@@ -12,23 +87,69 @@ const colors: Record<Colors, string> = {
   heading: "#94ABDC",
   grey: "#AAB2C5",
   placeholder: "#393F4F",
-};
+  color: "",
+  backgroundColor: "",
+  borderColor: "",
+  caretColor: "",
+  columnRuleColor: "",
+  borderTopColor: "",
+  borderBottomColor: "",
+  borderLeftColor: "",
+  borderRightColor: "",
+  outlineColor: "",
 
+  fill: "",
+  stroke: "",
+};
+const shadows: Record<Shadows, number | string | undefined> = {
+  boxShadow: "shadows",
+  textShadow: "shadows",
+};
 const fonts: Record<Fonts, string> = {
   body: `"Open Sans", sans-serif`,
   heading: `"Work Sans", sans-serif`,
+  fontFamily: "fonts",
+  fontSize: "fontSizes",
+  fontWeight: "fontWeights",
+  lineHeight: "lineHeights",
+  letterSpacing: "letterSpacings",
+};
+const borders: Record<Borders, undefined | string> = {
+  border: "borders",
+  borderTop: "borders",
+  borderRight: "borders",
+  borderBottom: "borders",
+  borderLeft: "borders",
+  borderWidth: "borderWidths",
+  borderStyle: "borderStyles",
+  borderRadius: "radii",
+  borderTopRightRadius: "radii",
+  borderTopLeftRadius: "radii",
+  borderBottomRightRadius: "radii",
+  borderBottomLeftRadius: "radii",
+  borderTopWidth: "borderWidths",
+  borderTopStyle: "borderStyles",
+  borderBottomWidth: "borderWidths",
+  borderBottomStyle: "borderStyles",
+  borderLeftWidth: "borderWidths",
+  borderLeftStyle: "borderStyles",
+  borderRightWidth: "borderWidths",
+  borderRightStyle: "borderStyles",
 };
 const DefaultTheme: Theme = {
+  aliases,
+  multiples,
+  sizes,
   colors,
+  shadows,
+  borders,
   fonts,
-  sizes: {
-    Box: 1080,
-    navbarHeight: 50,
-  },
   padding: {
     default: "2rem",
     dense: ".75rem",
   },
+  space,
+
   styles: {
     a: {
       color: colors.link,
