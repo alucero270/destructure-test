@@ -1,4 +1,3 @@
-import { CSSProperties } from "@emotion/serialize";
 import { CSSInterpolation } from "@emotion/serialize";
 
 export type Colors =
@@ -27,8 +26,7 @@ export type Colors =
   | "caretColor"
   | "columnRuleColor";
 
-//export { Link } from "../themeComponents/Link";
-
+export type Breakpoints = "xs"|"s" | "m" | "l" | "xl";
 export type Aliases =
   | "bg"
   | "m"
@@ -138,10 +136,12 @@ export type TextVariants =
   | "subheading"
   | "metric";
 
+
 interface Variants {
   text: Record<TextVariants, CSSInterpolation>;
   forms: Record<FormVariants, CSSInterpolation>;
   buttons: Record<ButtonVariants, CSSInterpolation>;
+  breakpoints: Record<Breakpoints, CSSInterpolation>;
 }
 
 interface Theme extends Variants {
@@ -156,6 +156,5 @@ interface Theme extends Variants {
   styles: Record<StyledElements, CSSInterpolation>;
   multiples: Record<Multiples, string[]>;
 }
-
 
 export default Theme;

@@ -1,6 +1,7 @@
 import Theme, {
   Aliases,
   Borders,
+  Breakpoints,
   Colors,
   Fonts,
   Multiples,
@@ -26,7 +27,13 @@ const aliases: Record<Aliases, string> = {
   px: "paddingX",
   py: "paddingY",
 };
-
+const breakpoints: Record<Breakpoints, string> = {
+  xs: "only screen and (max-width: 600px)",
+  s: "only screen and (min-width: 600px)",
+  m: "only screen and (min-width: 768px)",
+  l: "only screen and (min-width: 992px)",
+  xl: "only screen and (min-width: 1200px)",
+};
 const space: Record<Space, string | number> = {
   margin: "space",
   marginTop: "space",
@@ -136,78 +143,11 @@ const borders: Record<Borders, undefined | string> = {
   borderRightWidth: "borderWidths",
   borderRightStyle: "borderStyles",
 };
+
 const DefaultTheme: Theme = {
   aliases,
-  multiples,
-  sizes,
-  colors,
-  shadows,
   borders,
-  fonts,
-  padding: {
-    default: "2rem",
-    dense: ".75rem",
-  },
-  space,
-
-  styles: {
-    a: {
-      color: colors.link,
-      textDecoration: "none",
-      fontWeight: "bold",
-      fontFamily: fonts.body,
-      ":hover": {
-        color: colors.link_active,
-      },
-      ":active": {
-        color: colors.link_active,
-      },
-    },
-  },
-  text: {
-    copy: {
-      color: "white",
-      fontFamily: fonts.body,
-    },
-    heading: {
-      fontFamily: fonts.heading,
-      fontWeight: 300,
-      color: colors.heading,
-    },
-    accent: {
-      color: "#FEF0E8",
-    },
-    subheading: {
-      color: "white",
-    },
-    metric: {
-      fontWeight: 700,
-      color: "white",
-      fontSize: 36,
-    },
-  },
-  forms: {
-    input: {
-      border: "none",
-      padding: "16px 18px",
-      borderBottom: `2px solid ${colors.grey}`,
-      background: colors.background,
-      borderRadius: "1px",
-      outline: "none",
-      "&:active": {
-        outline: "none",
-        borderColor: colors.primary,
-      },
-      "&:focus": {
-        outline: "none",
-        borderColor: colors.primary,
-      },
-    },
-    "jumbo-input": {
-      variant: "forms.input",
-      fontSize: 18,
-    },
-  },
+  breakpoints,
   buttons: {
     primary: {
       border: "none",
@@ -252,6 +192,74 @@ const DefaultTheme: Theme = {
     },
     accent: {
       background: colors.accent,
+    },
+  },
+  colors,
+  fonts,
+  forms: {
+    input: {
+      border: "none",
+      padding: "16px 18px",
+      borderBottom: `2px solid ${colors.grey}`,
+      background: colors.background,
+      borderRadius: "1px",
+      outline: "none",
+      "&:active": {
+        outline: "none",
+        borderColor: colors.primary,
+      },
+      "&:focus": {
+        outline: "none",
+        borderColor: colors.primary,
+      },
+    },
+    "jumbo-input": {
+      variant: "forms.input",
+      fontSize: 18,
+    },
+  },
+  multiples,
+  padding: {
+    default: "2rem",
+    dense: ".75rem",
+  },
+  shadows,
+  sizes,
+  space,
+  styles: {
+    a: {
+      color: colors.link,
+      textDecoration: "none",
+      fontWeight: "bold",
+      fontFamily: fonts.body,
+      ":hover": {
+        color: colors.link_active,
+      },
+      ":active": {
+        color: colors.link_active,
+      },
+    },
+  },
+  text: {
+    copy: {
+      color: "white",
+      fontFamily: fonts.body,
+    },
+    heading: {
+      fontFamily: fonts.heading,
+      fontWeight: 300,
+      color: colors.heading,
+    },
+    accent: {
+      color: "#FEF0E8",
+    },
+    subheading: {
+      color: "white",
+    },
+    metric: {
+      fontWeight: 700,
+      color: "white",
+      fontSize: 36,
     },
   },
 };

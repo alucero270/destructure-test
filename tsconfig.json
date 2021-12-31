@@ -17,5 +17,5 @@
     "resolveJsonModule": true,
     "moduleResolution": "node"
   },
-  "include": ["./src/**/*", "callouts", "partnerships"]
+  "include": ["./src/**/*", "templates/Navigation/NavLinkList.ts", "templates/Navigation/Link.tsx"]
 }

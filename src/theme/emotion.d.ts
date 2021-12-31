@@ -1,11 +1,11 @@
-import "@emotion/react"
+import "@emotion/react";
 
-import { css } from "@emotion/react"
-import { CSSObject } from "@emotion/serialize"
-import { StyledComponent } from "@emotion/styled"
-import { default as TwilightTheme } from "./Theme"
-import Theme from "./Theme"
-export type { CSSObject } from "@emotion/react"
+import { css } from "@emotion/react";
+import { CSSObject } from "@emotion/serialize";
+import { StyledComponent } from "@emotion/styled";
+import { default as TwilightTheme } from "./Theme";
+import Theme from "./Theme";
+export type { CSSObject } from "@emotion/react";
 /* 
 
 All blocks are imported from Theme ui. 
@@ -13,18 +13,6 @@ Move to new file if necessary.
 Any additions that are not imports please annotate with comment blocks. 
 
 */
-declare type StandardCSSProperties = CSS.<number | string>
-
-export declare type Scale<T> = T[] | ScaleDict<T>
-
-export interface CSSProperties
-  extends CSS.StandardProperties<number | string>,
-    CSS.SvgProperties<number | string>,
-    CSS.VendorProperties<number | string> {}
-
-export declare type CSSPseudoSelectorProps = {
-  [K in CSS.Pseudos]?: StyledComponent
-}
 
 interface OverwriteCSSProperties {
   /**
@@ -40,7 +28,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-shadow
    */
-  boxShadow?: CSS.Property.BoxShadow | number
+  boxShadow?: CSS.Property.BoxShadow | number;
   /**
    * The **`font-weight`** CSS property specifies the weight (or boldness) of the font. The font weights available to you will depend on the `font-family` you are using. Some fonts are only
    * available in `normal` and `bold`.
@@ -53,7 +41,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-weight
    */
-  fontWeight?: CSS.Property.FontWeight | string
+  fontWeight?: CSS.Property.FontWeight | string;
   /**
    * The **`border-top-style`** CSS property sets the line style of an element's top `border`.
    *
@@ -65,7 +53,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
    */
-  borderTopStyle?: CSS.Property.BorderTopStyle | string
+  borderTopStyle?: CSS.Property.BorderTopStyle | string;
   /**
    * The **`border-bottom-style`** CSS property sets the line style of an element's bottom `border`.
    *
@@ -77,7 +65,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-style
    */
-  borderBottomStyle?: CSS.Property.BorderBottomStyle | string
+  borderBottomStyle?: CSS.Property.BorderBottomStyle | string;
   /**
    * The **`border-right-style`** CSS property sets the line style of an element's right `border`.
    *
@@ -89,7 +77,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-right-style
    */
-  borderRightStyle?: CSS.Property.BorderRightStyle | string
+  borderRightStyle?: CSS.Property.BorderRightStyle | string;
   /**
    * The **`border-left-style`** CSS property sets the line style of an element's left `border`.
    *
@@ -101,7 +89,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-left-style
    */
-  borderLeftStyle?: CSS.Property.BorderLeftStyle | string
+  borderLeftStyle?: CSS.Property.BorderLeftStyle | string;
   /**
    * The **`border-radius`** CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
    *
@@ -112,7 +100,7 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-radius
    */
-  borderRadius?: CSS.Property.BorderRadius<string | number>
+  borderRadius?: CSS.Property.BorderRadius<string | number>;
   /**
    * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
    *
@@ -124,92 +112,39 @@ interface OverwriteCSSProperties {
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/z-index
    */
-  zIndex?: CSS.Property.ZIndex | string
+  zIndex?: CSS.Property.ZIndex | string;
 }
 
-export interface VariantProperty {
-  /**
-   * **`Variants`** can be useful for applying complex styles to a component based on a single prop.
-   *
-   * @example
-   * const theme = {
-   *   buttons: {
-   *     primary: {
-   *       p: 3,
-   *       fontWeight: 'bold',
-   *       color: 'white',
-   *       bg: 'primary',
-   *       borderRadius: 2,
-   *     },
-   *   },
-   * }
-   * const result = css({
-   *   variant: 'buttons.primary',
-   * })(theme)
-   *
-   * @see https://styled-system.com/variants
-   */
-  variant?: string
-}
-export interface Label {
-  /**
-   * String appended to generated class name.
-   * @see https://emotion.sh/docs/labels
-   *
-   * You can style HTML <label> elements with `"& label": {}`.
-   */
-  label?: string
-}
-
-export interface ObjectWithDefault<T> {
-  /**
-   * Default value in nested scale.
-   *
-   * Given theme
-   * ```
-   * {
-   *   colors: {
-   *     primary: { __default: '#00f', light: '#33f' }
-   *   }
-   * }
-   * ```
-   * `sx={{ color: 'primary' }}` resolves to `color: #00f`.
-   */
-  __default?: T
-}
-
-export declare type Scale<T> = T[] | ScaleDict<T>
-
-
+export declare type Scale<T> = T[] | ScaleDict<T>;
 
 declare module "@emotion/react" {
   export interface Theme extends TwilightTheme {
     //Entire block are additions from theme-ui. Move to new file if necessary.
-    breakpoints?: Array<string>
+    breakpoints?: Array<string>;
     mediaQueries?: {
-      [size: string]: string
-    }
-    space?: Scale<CSS.Property.Margin<number | string>>
-    fontSizes?: Scale<CSS.Property.FontSize<number>>
-    fonts?: Scale<CSS.Property.FontFamily>
-    fontWeights?: Scale<CSS.Property.FontWeight>
+      [size: string]: string;
+    };
+    space?: Scale<CSS.Property.Margin<number | string>>;
+    fontSizes?: Scale<CSS.Property.FontSize<number>>;
+    fonts?: Scale<CSS.Property.FontFamily>;
+    fontWeights?: Scale<CSS.Property.FontWeight>;
     //lineHeights?: Scale<CSS.Property.LineHeight<TLengthStyledSystem>>;
     //letterSpacings?: Scale<CSS.Property.LetterSpacing<TLengthStyledSystem>>;
-    sizes?: Scale<CSS.Property.Height<{}> | CSS.Property.Width<{}>>
-    borders?: Scale<CSS.Property.Border<{}>>
-    borderStyles?: Scale<CSS.Property.Border<{}>>
+    sizes?: Scale<CSS.Property.Height<{}> | CSS.Property.Width<{}>>;
+    borders?: Scale<CSS.Property.Border<{}>>;
+    borderStyles?: Scale<CSS.Property.Border<{}>>;
     //borderWidths?: Scale<CSS.Property.BorderWidth<TLengthStyledSystem>>;
     //radii?: Scale<CSS.Property.BorderRadius<TLengthStyledSystem>>;
-    shadows?: Scale<CSS.Property.BoxShadow>
-    zIndices?: Scale<CSS.Property.ZIndex>
+    shadows?: Scale<CSS.Property.BoxShadow>;
+    zIndices?: Scale<CSS.Property.ZIndex>;
     //colorStyles?: Scale<ThemeUICSSProperties>;
     //textStyles?: Scale<ThemeUICSSProperties>;
-    opacities?: Scale<CSS.Property.Opacity>
-    transitions?: Scale<CSS.Property.Transition>
+    opacities?: Scale<CSS.Property.Opacity>;
+    transitions?: Scale<CSS.Property.Transition>;
     /**
      * Define the colors that are available through this theme
      */
-    colors?: ColorModesScale
+    colors?: ColorModesScale;
     /**
      * Colors are transformed into CSS custom properties.
      *
@@ -218,7 +153,7 @@ declare module "@emotion/react" {
      *
      * Additionally, you can access all the color modes in this objects.
      */
-    rawColors?: ColorModesScale
+    rawColors?: ColorModesScale;
     /**
      * Styles for elements rendered in MDX can be added to the theme.styles
      * object. This is the primary, low-level way to control typographic and
@@ -233,7 +168,7 @@ declare module "@emotion/react" {
      * with @styled-system/css and have access to base theme values like colors,
      * fonts, etc.
      */
-    styles?: ThemeStyles
+    styles?: ThemeStyles;
     /**
      * You can define additional CSS grid layouts by adding variants to the
      * `theme.grids` object. These styles can be used to create a wide variety of
@@ -243,7 +178,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/variants
      * @see https://theme-ui.com/components/grid#variants
      */
-    grids?: Record<string, StyledComponent>
+    grids?: Record<string, StyledComponent>;
     /**
      * Button variants can be defined in the `theme.buttons` object. The `Button`
      * component uses `theme.buttons.primary` as its default variant style.
@@ -252,7 +187,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/variants
      * @see https://theme-ui.com/components/button#variants
      */
-    buttons?: Record<string, StyledComponent>
+    buttons?: Record<string, StyledComponent>;
     /**
      * Text style variants can be defined in the `theme.text` object. The `Text`
      * component uses `theme.text.default` as its default variant style.
@@ -261,7 +196,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/variants
      * @see https://theme-ui.com/components/text#variants
      */
-    text?: Record<string, StyledComponent>
+    text?: Record<string, StyledComponent>;
     /**
      * Link variants can be defined in the `theme.links` object. By default the
      * `Link` component will use styles defined in `theme.styles.a`.
@@ -270,7 +205,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/variants
      * @see https://theme-ui.com/components/link#variants
      */
-    links?: Record<string, StyledComponent>
+    links?: Record<string, StyledComponent>;
     /**
      * Image style variants can be defined in the `theme.images` object.
      *
@@ -278,7 +213,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/variants
      * @see https://theme-ui.com/components/image#variants
      */
-    images?: Record<string, StyledComponent>
+    images?: Record<string, StyledComponent>;
     /**
      * Card style variants can be defined in `the theme.cards` object. By default
      * the `Card` component uses the `theme.cards.primary` variant.
@@ -287,7 +222,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/variants
      * @see https://theme-ui.com/components/card#variants
      */
-    cards?: Record<string, StyledComponent>
+    cards?: Record<string, StyledComponent>;
     /**
      * Container variants can be defined in the `theme.layout` object. The
      * `Container` component uses `theme.layout.container` as its default variant
@@ -297,7 +232,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/variants
      * @see https://theme-ui.com/components/container#variants
      */
-    layout?: Record<string, StyledComponent>
+    layout?: Record<string, StyledComponent>;
     /**
      * Label variants can be defined in `theme.forms` and the component uses the
      * `theme.forms.label` variant by default.
@@ -330,7 +265,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/checkbox#variants
      * @see https://theme-ui.com/components/slider#variants
      */
-    forms?: Record<string, StyledComponent>
+    forms?: Record<string, StyledComponent>;
     /**
      * Badge variants can be defined in `theme.badges`. The `Badge` component uses
      * `theme.badges.primary` as its default variant.
@@ -339,7 +274,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/variants
      * @see https://theme-ui.com/components/badge#variants
      */
-    badges?: Record<string, StyledComponent>
+    badges?: Record<string, StyledComponent>;
     /**
      * Alert variants can be defined in `theme.alerts`. The `Alert` component uses
      * `theme.alerts.primary` as its default variant.
@@ -348,7 +283,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/variants
      * @see https://theme-ui.com/components/alert#variants
      */
-    alerts?: Record<string, StyledComponent>
+    alerts?: Record<string, StyledComponent>;
     /**
      * Message variants can be defined in the `theme.messages` object.
      *
@@ -356,7 +291,7 @@ declare module "@emotion/react" {
      * @see https://theme-ui.com/components/variants
      * @see https://theme-ui.com/components/message#variants
      */
-    messages?: Record<string, StyledComponent>
+    messages?: Record<string, StyledComponent>;
   }
   export interface AliasesCSSProperties {
     /**
@@ -370,7 +305,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/background-color
      */
-    bg?: CSSProperties["backgroundColor"]
+    bg?: CSSProperties["backgroundColor"];
     /**
      * The **`margin`** CSS property sets the margin area on all four sides of an element. It is a shorthand for `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`.
      *
@@ -380,7 +315,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/margin
      */
-    m?: CSSProperties["margin"]
+    m?: CSSProperties["margin"];
     /**
      * The **`margin-top`** CSS property sets the margin area on the top of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
      *
@@ -392,7 +327,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
      */
-    mt?: CSSProperties["marginTop"]
+    mt?: CSSProperties["marginTop"];
     /**
      * The **`margin-right`** CSS property sets the margin area on the right side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
      *
@@ -404,7 +339,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-right
      */
-    mr?: CSSProperties["marginRight"]
+    mr?: CSSProperties["marginRight"];
     /**
      * The **`margin-bottom`** CSS property sets the margin area on the bottom of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
      *
@@ -416,7 +351,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
      */
-    mb?: CSSProperties["marginBottom"]
+    mb?: CSSProperties["marginBottom"];
     /**
      * The **`margin-left`** CSS property sets the margin area on the left side of an element. A positive value places it farther from its neighbors, while a negative value places it closer.
      *
@@ -428,7 +363,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-left
      */
-    ml?: CSSProperties["marginLeft"]
+    ml?: CSSProperties["marginLeft"];
     /**
      * The **`mx`** is shorthand for using both **`margin-left`** and **`margin-right`** CSS properties. They set the margin area on the left and right side of an element. A positive value placesit
      * farther from its neighbors, while a negative value places it closer.
@@ -443,7 +378,7 @@ declare module "@emotion/react" {
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-left
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-right
      */
-    mx?: CSSProperties["marginLeft"]
+    mx?: CSSProperties["marginLeft"];
     /**
      * The **`marginX`** is shorthand for using both **`margin-left`** and **`margin-right`** CSS properties. They set the margin area on the left and right side of an element. A positive value
      * places it farther from its neighbors, while a negative value places it closer.
@@ -458,7 +393,7 @@ declare module "@emotion/react" {
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-left
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-right
      */
-    marginX?: CSSProperties["marginLeft"]
+    marginX?: CSSProperties["marginLeft"];
     /**
      * The **`my`** is shorthard for using both **`margin-top`** and **`margin-bottom`** CSS properties. They set the margin area on the top and bottom of an element. A positive value places it
      * farther from its neighbors, while a negative value places it closer.
@@ -473,7 +408,7 @@ declare module "@emotion/react" {
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
      */
-    my?: CSSProperties["marginTop"]
+    my?: CSSProperties["marginTop"];
     /**
      * The **`marginY`** is shorthard for using both **`margin-top`** and **`margin-bottom`** CSS properties. They set the margin area on the top and bottom of an element. A positive value places
      * it farther from its neighbors, while a negative value places it closer.
@@ -488,7 +423,7 @@ declare module "@emotion/react" {
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-top
      * @see https://developer.mozilla.org/docs/Web/CSS/margin-bottom
      */
-    marginY?: CSSProperties["marginTop"]
+    marginY?: CSSProperties["marginTop"];
     /**
      * The **`padding`** CSS property sets the padding area on all four sides of an element. It is a shorthand for `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`.
      *
@@ -498,7 +433,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/padding
      */
-    p?: CSSProperties["padding"]
+    p?: CSSProperties["padding"];
     /**
      * The **`padding-top`** padding area on the top of an element.
      *
@@ -510,7 +445,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-top
      */
-    pt?: CSSProperties["paddingTop"]
+    pt?: CSSProperties["paddingTop"];
     /**
      * The **`padding-right`** CSS property sets the width of the padding area on the right side of an element.
      *
@@ -522,7 +457,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-right
      */
-    pr?: CSSProperties["paddingRight"]
+    pr?: CSSProperties["paddingRight"];
     /**
      * The **`padding-bottom`** CSS property sets the height of the padding area on the bottom of an element.
      *
@@ -534,7 +469,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
      */
-    pb?: CSSProperties["paddingBottom"]
+    pb?: CSSProperties["paddingBottom"];
     /**
      * The **`padding-left`** CSS property sets the width of the padding area on the left side of an element.
      *
@@ -546,7 +481,7 @@ declare module "@emotion/react" {
      *
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-left
      */
-    pl?: CSSProperties["paddingLeft"]
+    pl?: CSSProperties["paddingLeft"];
     /**
      * The **`px`** is shorthand property for CSS properties **`padding-left`** and **`padding-right`**. They set the width of the padding area on the left and right side of an element.
      *
@@ -560,7 +495,7 @@ declare module "@emotion/react" {
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-left
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-right
      */
-    px?: CSSProperties["paddingLeft"]
+    px?: CSSProperties["paddingLeft"];
     /**
      * The **`paddingX`** is shorthand property for CSS properties **`padding-left`** and **`padding-right`**. They set the width of the padding area on the left and right side of an element.
      *
@@ -574,7 +509,7 @@ declare module "@emotion/react" {
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-left
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-right
      */
-    paddingX?: CSSProperties["paddingLeft"]
+    paddingX?: CSSProperties["paddingLeft"];
     /**
      * The **`py`** is shorthand property for CSS properties **`padding-top`** and **`padding-bottom`**. They set the width of the padding area on the top and bottom of an element.
      *
@@ -588,7 +523,7 @@ declare module "@emotion/react" {
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-top
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
      */
-    py?: CSSProperties["paddingTop"]
+    py?: CSSProperties["paddingTop"];
     /**
      * The **`paddingY`** is shorthand property for CSS properties **`padding-top`** and **`padding-bottom`**. They set the width of the padding area on the top and bottom of an element.
      *
@@ -602,7 +537,7 @@ declare module "@emotion/react" {
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-top
      * @see https://developer.mozilla.org/docs/Web/CSS/padding-bottom
      */
-    paddingY?: CSSProperties["paddingTop"]
+    paddingY?: CSSProperties["paddingTop"];
     /**
      * The **`size`** is a shorthand property for CSS properties **`width`** and **`height`**.
      *
@@ -616,31 +551,67 @@ declare module "@emotion/react" {
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-left
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-right
      */
-    scrollMarginX?: CSSProperties["scrollMarginLeft"]
+    scrollMarginX?: CSSProperties["scrollMarginLeft"];
     /**
      * The **`scrollMarginY`** is shorthand property for CSS properties **`scroll-margin-top`** and **`scroll-margin-bottom`**. They set the margin of the scroll snap area that is used for snapping the element to the snapport.
      *
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-top
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin-bottom
      */
-    scrollMarginY?: CSSProperties["scrollMarginTop"]
+    scrollMarginY?: CSSProperties["scrollMarginTop"];
     /**
      * The **`scrollPaddingX`** is shorthand property for CSS properties **`scroll-padding-left`** and **`scroll-padding-right`**. They set the width of the scroll padding area on the left and right side of an element.
      *
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-left
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-right
      */
-    scrollPaddingX?: CSSProperties["scrollPaddingLeft"]
+    scrollPaddingX?: CSSProperties["scrollPaddingLeft"];
     /**
      * The **`scrollPaddingY`** is shorthand property for CSS properties **`scroll-padding-top`** and **`scroll-padding-bottom`**. They set the width of the scroll padding area on the top and bottom side of an element.
      *
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-top
      * @see https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-bottom
      */
-    scrollPaddingY?: CSSProperties["scrollPaddingTop"]
-    size?: CSSProperties["width"]
+    scrollPaddingY?: CSSProperties["scrollPaddingTop"];
+    size?: CSSProperties["width"];
   }
+  export interface VariantProperty {
+    /**
+     * **`Variants`** can be useful for applying complex styles to a component based on a single prop.
+     *
+     * @example
+     * const theme = {
+     *   buttons: {
+     *     primary: {
+     *       p: 3,
+     *       fontWeight: 'bold',
+     *       color: 'white',
+     *       bg: 'primary',
+     *       borderRadius: 2,
+     *     },
+     *   },
+     * }
+     * const result = css({
+     *   variant: 'buttons.primary',
+     * })(theme)
+     *
+     * @see https://styled-system.com/variants
+     */
+    variant?: string;
+  }
+  declare type StandardCSSProperties = CSS<number | string>;
+
+  export declare type Scale<T> = T[] | ScaleDict<T>;
+
+  export interface CSSProperties
+    extends CSS.StandardProperties<number | string>,
+      CSS.SvgProperties<number | string>,
+      CSS.VendorProperties<number | string> {}
+
+  export declare type CSSPseudoSelectorProps = {
+    [K in CSS.Pseudos]?: StyledComponent;
+  };
   export interface ThemeDerivedStyles {
-    (theme: Theme): CSSObject
+    (theme: Theme): CSSObject;
   }
 }
