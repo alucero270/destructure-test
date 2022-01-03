@@ -1,7 +1,7 @@
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import { HTMLAttributes } from "react";
-import { ButtonVariants } from "../theme/Theme";
+import { ButtonVariants } from "../../theme/Theme";
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
   variant: ButtonVariants;

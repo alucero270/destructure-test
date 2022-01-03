@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
+import { wrap } from "module";
 
 export const Nav = styled.nav`
   background: #ba3232ff;
@@ -10,9 +11,7 @@ export const Nav = styled.nav`
   flex-wrap: wrap;
   width: 100%;
   align-items: center;
-  height: auto;
-`
-
+  height: auto;`
 export const NavContainer = styled.section`
   display: flex;
   flex-direction: row;

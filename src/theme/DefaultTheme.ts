@@ -27,6 +27,7 @@ const aliases: Record<Aliases, string> = {
   px: "paddingX",
   py: "paddingY",
 };
+
 const breakpoints: Record<Breakpoints, string> = {
   xs: "only screen and (max-width: 600px)",
   s: "only screen and (min-width: 600px)",
@@ -34,6 +35,7 @@ const breakpoints: Record<Breakpoints, string> = {
   l: "only screen and (min-width: 992px)",
   xl: "only screen and (min-width: 1200px)",
 };
+
 const space: Record<Space, string | number> = {
   margin: "space",
   marginTop: "space",
@@ -195,6 +197,7 @@ const DefaultTheme: Theme = {
     },
   },
   colors,
+
   fonts,
   forms: {
     input: {
@@ -240,6 +243,7 @@ const DefaultTheme: Theme = {
       },
     },
   },
+
   text: {
     copy: {
       color: "white",
@@ -262,6 +266,7 @@ const DefaultTheme: Theme = {
       fontSize: 36,
     },
   },
+
 };
 
 export default DefaultTheme;

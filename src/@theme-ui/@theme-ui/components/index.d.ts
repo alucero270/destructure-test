@@ -25,7 +25,26 @@ export interface BoxOwnProps extends SpaceProps, ColorProps {
   sx?: ThemeUIStyleObject
 }
 export interface BoxProps
-  extends Assign<React.ComponentPropsWithRef<'div'>, BoxOwnProps> {}
+  extends Assign<React.ComponentPropsWithRef<'div'>, BoxOwnProps> {
+  centered: string
+  dense: string
+  display: string
+  margin: string
+  marginBottom: string
+  marginLeft: string
+  marginRight: string
+  marginTop: string
+  marginX: string
+  marginY: string
+  padding: string
+  paddingBottom: string
+  paddingLeft: string
+  paddingRight: string
+  paddingTop: string
+  paddingX: string
+  paddingY: string
+  width: string
+}
 /**
  * Use the Box component as a layout primitive to add margin, padding, and colors to content.
  * @see https://theme-ui.com/components/box

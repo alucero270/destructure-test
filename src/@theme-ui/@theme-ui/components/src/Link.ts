@@ -1,6 +1,6 @@
 import { useTheme } from "@emotion/react";
 import React from "react";
-import Theme from "../../../../from_twilight/Theme"
+import Theme from "../../../../templates/from_twilight/Theme"
 import Box from "./Box";
 
 export const Link = React.forwardRef(function Link(props, ref) {

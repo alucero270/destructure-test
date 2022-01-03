@@ -1,3 +1,23 @@
+export interface BoxProps {
+  centered?: boolean;
+  dense?: boolean;
+  display?: string;
+  margin?: string | number;
+  marginBottom?: string | number;
+  marginLeft?: string | number;
+  marginRight?: string | number;
+  marginTop?: string | number;
+  marginX?: string | number;
+  marginY?: string | number;
+  padding?: string | number;
+  paddingBottom?: string | number;
+  paddingLeft?: string | number;
+  paddingRight?: string | number;
+  paddingTop?: string | number;
+  paddingX?: string | number;
+  paddingY?: string | number;
+  width?: string | number;
+}
 export interface GridProps {
   className: string | undefined;
   children?: any;
@@ -24,20 +44,20 @@ export interface GridProps {
     | "space-around"
     | "space-between"
     | "space-evenly";
-  justifyItems?: "start" | "end" | "center" | "stretch";
   /****** Child Props ********/
-  gridColumn?: number;
-  gridRow?: number;
-  gridRowColumn?: number;
-  justifySelf?: string;
+  justifyItems?: "start" | "end" | "center" | "stretch";
   alignSelf?: string;
+  gridColumn?: number|string;
+  gridRow?: number|string;
+  gridRowColumn?: number|string;
+  justifySelf?: string;
   /****** Common Layout Props ********/
-  padding?: string;
-  margin?: string;
-  width?: string;
   height?: string;
-  maxWidth?: string;
+  margin?: string;
   maxHeight?: string;
+  maxWidth?: string;
+  padding?: string;
+  width?: string;
 }
 
 export interface FlexProps {

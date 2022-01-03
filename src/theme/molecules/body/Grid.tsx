@@ -32,7 +32,7 @@ import { GridProps } from "./BodyElementProps";
 const Grid = (props: GridProps) => {
   const theme = useTheme();
   return (
-    <Box
+    <div
       className={props.className}
       css={{
         alignContent: props.alignContent || "stretch",
@@ -57,7 +57,7 @@ const Grid = (props: GridProps) => {
       }}
     >
       {props.children}
-    </Box>
+    </div>
   );
 };
 export default Grid;

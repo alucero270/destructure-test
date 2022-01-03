@@ -119,6 +119,28 @@ export type Fonts =
   | "lineHeight"
   | "letterSpacing";
 
+  export type BoxVariants =|"grid"|"flex"|"container";
+
+  export type Box =
+  |"padding" 
+  |"paddingTop" 
+  |"paddingRight" 
+  |"paddingBottom" 
+  |"paddingLeft" 
+  |"paddingX" 
+  |"paddingY" 
+  |"margin" 
+  |"marginTop" 
+  |"marginRight" 
+  |"marginBottom" 
+  |"marginLeft" 
+  |"marginX" 
+  |"marginY" 
+  |"width" 
+  |"display" 
+  |"centered" 
+  |"dense" ;
+
 export type Padding = "default" | "dense";
 
 export type Shadows = "boxShadow" | "textShadow";
