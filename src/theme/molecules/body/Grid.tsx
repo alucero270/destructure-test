@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import { Box } from "../../atoms/body/Box";
+import Box from "../../atoms/body/Box";
 import { GridProps } from "./BodyElementProps";
 
 // interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -32,32 +32,32 @@ import { GridProps } from "./BodyElementProps";
 const Grid = (props: GridProps) => {
   const theme = useTheme();
   return (
-    <div
+    <Box
       className={props.className}
       css={{
         alignContent: props.alignContent || "stretch",
         alignItems: props.alignItems || "stretch",
+        alignSelf: props.alignSelf || "stretch",
+        background: "#115980ff",
         display: props.container ? "grid" : "inline-grid" || "subgrid",
         gridAutoFlow: props.gridAutoFlow || "row",
-        gridGap: props.gridGap || "grid-gap",
-        gridTemplate: props.gridTemplate || "grid-template-columns",
-        justifyContent: props.justifyContent || "start",
-        justifyItems: props.justifyItems ||"start",
         gridColumn: props.gridColumn || "grid-column-start: 1; grid-column-end: 3;",
+        gridGap: props.gridGap || "grid-gap",
         gridRow: props.gridRow || "grid-row-start: 1; grid-row-end: 3;",
         gridRowColumn: props.gridRowColumn || "grid-row: 1 / span 2; grid-column: 1 / span 2;",
+        gridTemplate: props.gridTemplate || "grid-template-columns",
+        height: props.height || "auto",
+        justifyContent: props.justifyContent || "start",
+        justifyItems: props.justifyItems ||"start",
         justifySelf: props.justifySelf || "stretch;",
-        alignSelf: props.alignSelf || "stretch",
         margin: props.margin || "0",
+        maxWidth: props.maxWidth || "none",
         padding: props.padding || "0",
         width: props.width || "auto",
-        height: props.height || "auto",
-        maxWidth: props.maxWidth || "none",
-        background: "#115980ff"
       }}
     >
       {props.children}
-    </div>
+    </Box>
   );
 };
 export default Grid;

@@ -4,6 +4,7 @@ require("ts-node").register({
     target: "es2017",
   },
 });
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",

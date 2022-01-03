@@ -1,10 +1,11 @@
 import { useTheme } from "@emotion/react";
+import Box from "../../atoms/body/Box";
 import { FlexProps } from "./BodyElementProps";
 
 const Flex = (props: FlexProps) => {
   const theme = useTheme();
   return (
-    <div
+    <Box
       className={props.className}
       css={{
         alignItems: props.alignItems || "stretch",
@@ -25,7 +26,7 @@ const Flex = (props: FlexProps) => {
       }}
     >
       {props.children}
-    </div>
+    </Box>
   );
 };
 export default Flex;

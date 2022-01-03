@@ -1,8 +1,8 @@
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import { wrap } from "module";
+import Flex from "../body/Flex";
 
-export const Nav = styled.nav`
+export const Nav = styled(Flex)`
   background: #ba3232ff;
   display: flex;
   justify-content: space-between;
@@ -12,6 +12,8 @@ export const Nav = styled.nav`
   width: 100%;
   align-items: center;
   height: auto;`
+
+
 export const NavContainer = styled.section`
   display: flex;
   flex-direction: row;
@@ -51,7 +53,7 @@ export const NavLink = styled(Link)`
     color: #15cdfc;
   }
 `
-export const NavMenu = styled.div`
+export const NavMenu = styled(Flex)`
   display: flex;
   justify-items: space-between;
   align-items: center;
@@ -61,8 +63,8 @@ export const NavMenu = styled.div`
     flex-direction: column;
     width: 100%;
     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0px")};
-  }
-`
+  }`
+
 
 export const NavBtn = styled.nav`
   display: flex;

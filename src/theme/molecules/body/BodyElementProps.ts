@@ -1,4 +1,7 @@
 export interface BoxProps {
+  className: string | undefined;
+  children?: any;
+  container?: boolean;
   centered?: boolean;
   dense?: boolean;
   display?: string;
@@ -43,13 +46,14 @@ export interface GridProps {
     | "stretch"
     | "space-around"
     | "space-between"
-    | "space-evenly";
+    | "space-evenly"
+    ;
   /****** Child Props ********/
   justifyItems?: "start" | "end" | "center" | "stretch";
   alignSelf?: string;
-  gridColumn?: number|string;
-  gridRow?: number|string;
-  gridRowColumn?: number|string;
+  gridColumn?: number | string;
+  gridRow?: number | string;
+  gridRowColumn?: number | string;
   justifySelf?: string;
   /****** Common Layout Props ********/
   height?: string;
@@ -65,7 +69,25 @@ export interface FlexProps {
   className?: string;
   container?: boolean;
   /****** Container Props ********/
+  alignContent?:
+    | "stretch"
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "space-between"
+    | "space-around"
+    ;
+  alignItems?:
+    | "stretch"
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "baseline"
+    | "initial"
+    | "inherit";
   flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
+  flexWrap?: "wrap" | "nowrap" | "wrap-reverse";
+  isOpen?: boolean;
   justifyContent?:
     | "flex-start"
     | "flex-end"
@@ -75,34 +97,20 @@ export interface FlexProps {
     | "space-evenly"
     | "initial"
     | "inherit";
-  flexWrap?: "wrap" | "nowrap" | "wrap-reverse";
-  alignItems?:
-    | "stretch"
-    | "center"
-    | "flex-start"
-    | "flex-end"
-    | "baseline"
-    | "initial"
-    | "inherit";
-  alignContent?:
-    | "stretch"
-    | "center"
-    | "flex-start"
-    | "flex-end"
-    | "space-between"
-    | "space-around";
+
   /****** Child Props ********/
   alignSelf?: string;
+  flex?: string | number;
+  flexBasis?: number | string | "auto";
   flexGrow?: number;
   flexShrink?: number;
-  flexBasis?: number | string | "auto";
+  open?: boolean;
   order?: number;
-  flex?: string | number;
   /****** Common Layout Props ********/
-  padding?: string;
-  margin?: string;
-  width?: string;
   height?: string;
-  maxWidth?: string;
+  margin?: string;
   maxHeight?: string;
+  maxWidth?: string;
+  padding?: string;
+  width?: string;
 }
