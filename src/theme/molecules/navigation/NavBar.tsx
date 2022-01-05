@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Nav, NavLink, Bars, NavMenu, NavContainer } from "./NavBarElements"
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   return (
     <Nav>
       <NavContainer>
@@ -10,7 +10,7 @@ const Navbar = () => {
           <h1>New Mexico Podiatry</h1>
         </NavLink>
       </NavContainer>
-      <Bars onClick={_e => setOpen(prev => !prev)}>
+      <Bars onClick={(_e) => setOpen((prev) => !prev)}>
         <span />
         <span />
         <span />
@@ -23,7 +23,7 @@ const Navbar = () => {
         <NavLink to="/sign-up">Sign Up</NavLink>
       </NavMenu>
     </Nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

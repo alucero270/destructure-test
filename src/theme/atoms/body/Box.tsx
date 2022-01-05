@@ -1,4 +1,7 @@
-import { BoxProps } from "../../molecules/body/BodyElementProps";
-const Box = (props: BoxProps) => 
-<div css={() => ({ ...props })} />;
+import { BoxProps, FlexProps, GridProps } from "../../molecules/body/BodyElementProps";
+
+const Box = (props:BoxProps|GridProps|FlexProps) => (
+    <div {...props}/>
+)
+
 export default Box;

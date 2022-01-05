@@ -1,11 +1,14 @@
+import { ReactNode } from "react";
+
 export interface BoxProps {
-  className: string | undefined;
-  children?: any;
+  as?: string;
+  className?: string;
+  children?: ReactNode;
   container?: boolean;
   centered?: boolean;
-  dense?: boolean;
-  display?: string;
-  margin?: string | number;
+  dense?: string;
+  display?: boolean;
+  margin?: number;
   marginBottom?: string | number;
   marginLeft?: string | number;
   marginRight?: string | number;
@@ -22,38 +25,39 @@ export interface BoxProps {
   width?: string | number;
 }
 export interface GridProps {
-  className: string | undefined;
-  children?: any;
+  background?: string;
+  className?: string;
+  children?: ReactNode;
   container?: boolean;
   /****** Container Props ********/
   alignContent?:
-    | "start"
-    | "end"
     | "center"
-    | "stretch"
+    | "end"
     | "space-around"
     | "space-between"
-    | "space-evenly";
+    | "space-evenly"
+    | "start"
+    | "stretch";
+
   alignItems?: "start" | "end" | "center" | "stretch";
   display?: "grid" | "inline-grid" | "subgrid";
   gridAutoFlow?: "row" | "column" | "dense";
   gridGap?: "grid-gap" | "grid-column-gap" | "grid-row-gap";
   gridTemplate?: "grid-template-columns" | "grid-template-rows";
   justifyContent?:
-    | "start"
-    | "end"
     | "center"
-    | "stretch"
+    | "end"
     | "space-around"
     | "space-between"
     | "space-evenly"
-    ;
+    | "start"
+    | "stretch";
   /****** Child Props ********/
-  justifyItems?: "start" | "end" | "center" | "stretch";
   alignSelf?: string;
   gridColumn?: number | string;
   gridRow?: number | string;
   gridRowColumn?: number | string;
+  justifyItems?: "start" | "end" | "center" | "stretch";
   justifySelf?: string;
   /****** Common Layout Props ********/
   height?: string;
@@ -65,46 +69,46 @@ export interface GridProps {
 }
 
 export interface FlexProps {
-  children?: any;
+  background?: string;
+  children?: ReactNode;
   className?: string;
   container?: boolean;
+  display?: boolean;
   /****** Container Props ********/
   alignContent?:
-    | "stretch"
     | "center"
-    | "flex-start"
     | "flex-end"
-    | "space-between"
+    | "flex-start"
     | "space-around"
-    ;
+    | "space-between"
+    | "stretch";
   alignItems?:
-    | "stretch"
-    | "center"
-    | "flex-start"
-    | "flex-end"
     | "baseline"
-    | "initial"
-    | "inherit";
-  flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
-  flexWrap?: "wrap" | "nowrap" | "wrap-reverse";
-  isOpen?: boolean;
-  justifyContent?:
-    | "flex-start"
-    | "flex-end"
     | "center"
-    | "space-between"
-    | "space-around"
-    | "space-evenly"
+    | "flex-end"
+    | "flex-start"
+    | "inherit"
     | "initial"
-    | "inherit";
+    | "stretch";
+  flexDirection?: "column" | "column-reverse" | "row" | "row-reverse";
+  flexWrap?: "nowrap" | "wrap" | "wrap-reverse";
+
+  justifyContent?:
+    | "center"
+    | "flex-end"
+    | "flex-start"
+    | "inherit"
+    | "initial"
+    | "space-around"
+    | "space-between"
+    | "space-evenly";
 
   /****** Child Props ********/
   alignSelf?: string;
   flex?: string | number;
-  flexBasis?: number | string | "auto";
+  flexBasis?: number | string;
   flexGrow?: number;
   flexShrink?: number;
-  open?: boolean;
   order?: number;
   /****** Common Layout Props ********/
   height?: string;

@@ -1,18 +1,24 @@
-import styled from "@emotion/styled"
-import { Link } from "gatsby"
+import styled from "@emotion/styled";
+import { Link } from "gatsby";
+import { FlexProps } from "../body/BodyElementProps";
 import Flex from "../body/Flex";
 
-export const Nav = styled(Flex)`
-  background: #ba3232ff;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  align-items: center;
-  height: auto;`
-
+export const Nav = (props: FlexProps) => (
+  <Flex
+    css={{
+      alignItems: "center",
+      background: "#ba3232ff",
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      height: "auto",
+      justifyContent: "space-between",
+      padding: "10px",
+      width: "100%",
+    }}
+    {...props}
+  />
+);
 
 export const NavContainer = styled.section`
   display: flex;
@@ -20,26 +26,27 @@ export const NavContainer = styled.section`
   justify-content: space-between;
   align-items: space-evenly;
   text-align: center;
-`
+`;
 
-export const Bars = styled.div`
+export const Bars = styled.button`
   display: none;
   flex-direction: column;
   margin: 25px;
   cursor: pointer;
+  border-radius: 5px;
 
   span {
     height: 2px;
     width: 25px;
     background: black;
-    margin-bottom: 4px;
+    margin: 4px;
     border-radius: 5px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 968px) {
     display: flex;
   }
-`
+`;
 export const NavLink = styled(Link)`
   color: black;
   text-decoration: none;
@@ -52,19 +59,24 @@ export const NavLink = styled(Link)`
   &:hover {
     color: #15cdfc;
   }
-`
-export const NavMenu = styled(Flex)`
+`;
+
+export interface NavMenuProps {
+  open: Boolean;
+}
+
+export const NavMenu = styled.nav<NavMenuProps>`
   display: flex;
   justify-items: space-between;
   align-items: center;
   position: relative;
-  @media (max-width: 768px) {
+  @media (max-width: 968px) {
     overflow: hidden;
     flex-direction: column;
     width: 100%;
-    max-height: ${({ isOpen }) => (isOpen ? "300px" : "0px")};
-  }`
-
+    max-height: ${({ open }) => (open ? "300px" : "0px")};
+  }
+`;
 
 export const NavBtn = styled.nav`
   display: flex;
@@ -75,7 +87,7 @@ export const NavBtn = styled.nav`
   @media screen and (max-width: 768px) {
     display: none;
   }
-`
+`;
 
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
@@ -94,4 +106,4 @@ export const NavBtnLink = styled(Link)`
     background: teal;
     color: #010606;
   }
-`
+`;
